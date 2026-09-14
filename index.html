@@ -1,578 +1,409 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Pagina CV</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/codess.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio personal de Franco Alegre — desarrollo web, programación y soporte IT.">
+  <meta name="theme-color" content="#080b12">
+  <title>Franco Alegre | Developer & IT</title>
+
+  <!-- Tailwind CSS vía CDN. Para producción, puede migrarse a Tailwind CLI/PostCSS. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Space Grotesk', 'Inter', 'ui-sans-serif', 'sans-serif']
+          },
+          colors: {
+            ink: '#080b12',
+            panel: '#101620',
+            accent: '#8bffbf',
+            muted: '#98a2b3'
+          },
+          boxShadow: {
+            glow: '0 0 60px rgba(139,255,191,.12)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/codess.png">
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <script src="script.js" defer></script>
 </head>
 
-<body>
-    
-    <div class="contenedor-header">
-        <header>
-            <div class="logo">
-                <a href="#">Franco Alegre </a></a>
-            </div>
-            <nav id="nav">
-                <ul>
-                    <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
-                    <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>      
-                    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>   
-                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>   
-                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>   
-                    <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>   
-                </ul>
-            </nav>
-            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </header>
+<body class="bg-ink text-white antialiased selection:bg-accent selection:text-ink">
+  <div class="site-noise" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/70 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="#inicio" class="font-display text-xl font-bold tracking-tight">
+        FA<span class="text-accent">.</span>
+      </a>
+
+      <button id="menu-toggle" class="rounded-xl border border-white/10 p-2.5 text-white/80 md:hidden" aria-label="Abrir menú" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+
+      <nav id="main-nav" class="absolute left-4 right-4 top-[calc(100%+8px)] hidden rounded-2xl border border-white/10 bg-panel/95 p-3 shadow-2xl backdrop-blur-xl md:static md:block md:bg-transparent md:p-0 md:shadow-none">
+        <ul class="flex flex-col gap-1 md:flex-row md:items-center md:gap-2">
+          <li><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li><a class="nav-link" href="#yui">Yui</a></li>
+          <li><a class="nav-link" href="#proyectos">Proyectos</a></li>
+          <li><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+          <li><a class="nav-link" href="#experiencia">Experiencia</a></li>
+          <li><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
     </div>
-    <section id="inicio" class="inicio">
-        <div class="contenido-banner">
-            <div class="contenedor-img">
-                <img src="img/IMG-20211211-WA0140.jpg" alt="">
-            </div>
-            <h1>FRANCO ALEGRE</h1>
-            <h2>Programador</h2>
-            <div class="redes">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.linkedin.com/in/franco-alegre-160b20233/"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/frankbj12"><i class="fa-brands fa-github"></i></a>
-            </div>        
-        </div>
-   
-    </section>
-    
-    <section id="portfolio" class="portfolio">
-        <div class="contenido-section">
-            <h2>Portfolio</h2>
-            <div class="galeria">
-                <div class="proyecto">
-                    <img src="img/proeject.png" alt="">
-                    <div class="overlay">
-                        <h3>Projecto Final Curso</h3>
-                        <p>Desarrolo web</p>
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/iam.png" alt="">
-                    <div class="overlay">
-                        <h3>Esta Pagina</h3>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/RESTAURANT.png" alt="">
-                    <div class="overlay">
-                        <h3>Projecto Final Curso</h3>
-                        <p>Desarrolo web</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  </header>
 
-    <section id="Certi" class="certi">
-        <div class="contenido-section">
-            <h2>Certificados</h2>
-            <div class="galeria">
-                <div class="proyecto">
-                    <img src="img/ingles A1.png" alt="">
-                    <div class="overlay">
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/python datos.png" alt="">
-                    <div class="overlay">
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="relative flex min-h-screen items-center overflow-hidden pt-24">
+      <div class="hero-grid absolute inset-0" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-a" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-b" aria-hidden="true"></div>
 
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/Cisco ciberseguridad.png" alt="">
-                    <div class="overlay">
-                    
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/INLES IT a2.png" alt="">
-                    <div class="overlay">
-                        
-                    </div>
-                </div>
-                
-                <div class="proyecto">
-                    <img src="img/Desarrollo web front end.png" alt="">
-                    <div class="overlay">
-                        
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/JavaScript 2.png" alt="">
-                    <div class="overlay">
-                        
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/ingles A2.png" alt="">
-                    <div class="overlay">
-                       
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/Programacion y ciber.png" alt="">
-                    <div class="overlay">
-                        
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/ingles a1.1.png" alt="">
-                    <div class="overlay">
-                        
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/JavaScript 1.png" alt="">
-                    <div class="overlay">
-                       
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/SE PROGRMAR 1ra.png" alt="">
-                    <div class="overlay">
-                        
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/trainig laboral.png" alt="">
-                    <div class="overlay">
-                        
-                    </div>
-                </div>
-                <div class="proyecto">
-                    <img src="img/titulo esstnc.jpg" alt="">
-                    <div class="overlay">
-                        
-                    </div>
-                </div>
-                
-            </div>
+      <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 lg:grid-cols-[1.15fr_.85fr] lg:px-8">
+        <div class="reveal">
+          <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-2 text-sm font-medium text-accent">
+            <span class="status-dot"></span>
+            Disponible para nuevos desafíos
+          </p>
+
+          <h1 class="max-w-4xl font-display text-5xl font-bold leading-[.95] tracking-[-.04em] sm:text-6xl lg:text-8xl">
+            Franco<br>
+            <span class="text-gradient">Alegre.</span>
+          </h1>
+
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-muted sm:text-xl">
+            Developer & IT. Construyo soluciones web, exploro automatización con IA
+            y combino programación con soporte técnico para resolver problemas reales.
+          </p>
+
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="#yui" class="btn-primary">
+              Conocer Yui <i data-lucide="arrow-down-right"></i>
+            </a>
+            <a href="#proyectos" class="btn-secondary">
+              Ver proyectos <i data-lucide="layers-3"></i>
+            </a>
+          </div>
+
+          <div class="mt-10 flex flex-wrap gap-5 text-sm text-muted">
+            <a class="social-link" href="https://github.com/frankbj12" target="_blank" rel="noreferrer">
+              <i data-lucide="github"></i> GitHub
+            </a>
+            <a class="social-link" href="https://www.linkedin.com/in/franco-alegre-160b20233/" target="_blank" rel="noreferrer">
+              <i data-lucide="linkedin"></i> LinkedIn
+            </a>
+            <a class="social-link" href="mailto:francocacu58@gmail.com">
+              <i data-lucide="mail"></i> Email
+            </a>
+          </div>
         </div>
+
+        <div class="reveal delay-1 flex justify-center lg:justify-end">
+          <div class="avatar-wrap">
+            <!-- IMAGEN PRINCIPAL: reemplazá este path si querés usar otro avatar/retrato. -->
+            <img src="img/IMG-20211211-WA0140.jpg" alt="Franco Alegre" width="312" height="639" fetchpriority="high">
+            <div class="avatar-tag">
+              <span class="text-accent">></span>
+              <span>Developer / IT</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="curriculum" class="curriculum">
-        <div class="contenido-section">
-            <h2>Curriculum</h2>
-            <div class="fila">
-                <div class="col izquierda">
-                    <h3>Educacion</h3>
-                    <div class="item izq">
-                        <h4>Tecnico en Iformatica Profecional y Personal</h4>
-                        <span class="casa">Escuela Secundaria Tecnica N.3</span>
-                        <span class="fecha">2013 - 2020</span>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                    <div class="item izq">
-                        <h4>Lengua Extranjera Ingles A1</h4>
-                        <span class="casa">instituto superior de profesorado N°4 |Reconquista, Santa Fe, Argentina</span>
-                        <span class="fecha">09-2022 - 12-2022</span>
-
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                    <div class="item izq">
-                        <h4>Tecnico Superior  en Informatica</h4>
-                        <span class="casa">Universidad Nacional General Sarmiento. | Buenos Aires, Argentina</span>
-                        <span class="fecha">05-2021 -- Presente</span>
-
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                    <div class="item izq">
-                        <h4>Introduccion al Desarrollo Web: HTML y CSS</h4>
-                        <span class="casa">Google Digital Academy | Buenos Aires, Argentina</span>
-                        <span class="fecha"> 09-2022</span>
-                        <p>En este curso aprendi lo basico para hacer paginas web y a darle estilo con css.</p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                    <div class="item izq">
-                        <h4>Cybersecurity Essentials</h4>
-                        <span class="casa">Cisco/cessi/EDUTEK argentina| Buenos Aires, Argentina</span>
-                        <span class="fecha">02-2022 - 08-2022</span>
-                        <p>En este curso aprendi a:
-                        <p>Describir las características de los delincuentes y héroes del ámbito de la ciberseguridad.</p>
-                        <p>Describir los principios de confidencialidad, integridad y disponibilidad que se relacionan con los estados de datos y las contramedidas de ciberseguridad.</p>
-                        <p>Describir las tácticas, las técnicas y los procedimientos utilizados por los delincuentes cibernéticos.</p>
-                        <p>Describir cómo las tecnologías, los productos y los procedimientos se utilizan para proteger la confidencialidad.</p>
-                        <p>Describir cómo las tecnologías, los productos y los procedimientos se utilizan para garantizar la integridad.</p>
-                        <p>Describir cómo las tecnologías, los productos y los procedimientos proporcionan alta disponibilidad.</p>
-                        <p>Explicar la forma en que los profesionales de la ciberseguridad utilizan las tecnologías, los procesos y los procedimientos para defender todos los componentes de la red.</p>
-                        <p>Explicar el propósito de las leyes relacionadas con la ciberseguridad.</p>
-                        </p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                    <div class="item izq">
-                        <h4>Trinig Laboral</h4>
-                        <span class="casa">Cat technologies</span>
-                        <span class="fecha">2024</span>
-                        <p>En este taller laboral aprendi lo basico de atencion al cliente</p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col derecha">
-                    <h3>Detalles</h3>
-                    <div class="item der">
-                        <h4>Primera Etapa  #SeProgramar</h4>
-                        <span class="casa">Argentina Programa | Buenos Aires, Argentina</span>
-                        <span class="fecha">07-2022 - 12-2022</span>
-                        <p>En este curso aprendi mas lo que es la programacion orientada a objetos y tambien aprendi lo basico del lenguaje Ruby.</p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                    <div class="item der">
-                        <h4>Primeros Pasos del Desarrollo front-end</h4>
-                        <span class="casa">Argentina Programa 4.0 | Buenos Aires, Argentina</span>
-                        <span class="fecha">12-2022 - 02-2023</span>
-                        <p>En este curso, adquiri los conocimientos necesarios para dar mis primeros pasos en el mundo del desarrollo web. Aprendi sobre las tecnologías fundamentales, como HTML, CSS y JavaScript, para crear sitios web atractivos y funcionales.</p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                    <div class="item der">
-                        <h4>Introduccion al Desarrollo Web: HTML y CSS</h4>
-                        <span class="casa">Google Digital Academy | Buenos Aires, Argentina</span>
-                        <span class="fecha"> 09-2022</span>
-                        <p>En este curso aprendi lo basico para hacer paginas web y a darle estilo con css.</p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                    <div class="item der">
-                        <h4>Ciberseguridad en el Trabajo</h4>
-                        <span class="casa">Google Digital Academy | Buenos Aires, Argentina</span>
-                        <span class="fecha">2022</span>
-                        <P>En este curso de google apredi lo basico para cuidar un negocio/empresa.</P>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                    <div class="item der">
-                        <h4>JavaScript Essentials 1 (JSE)</h4>
-                        <span class="casa">Cisco /cessi/openedg| Buenos Aires, Argentina</span>
-                        <span class="fecha">2023</span>
-                        <p>En este curso aprendi sobre:
-                        <p>Introducción a JavaScript y la programación informática.</p>
-                        <p>Variables, tipos de datos, conversión de tipos y comentarios.</p>
-                        <p>Operadores e interacción del usuario.</p>
-                        <p>Flujo de control: ejecución condicional y bucles.</p>
-                        <p>Funciones.</p>
-                        <p>Errores, excepciones, depuración y resolución de problemas</p></p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                    <div class="item der">
-                        <h4>Procesamiento de datos con Python</h4>
-                        <span class="casa">Argentina Programa 4.0</span>
-                        <span class="fecha">05-2023 - 08-2023</span>
-                        <p>En este curso aprendi que es el  Machine Learning, y acercandome la estructura de la metodología de trabajo de un científico de datos, a partir de la manipulación de información en Python y usar también la herramienta de Jupyter Notebook dentro del entorno de Anaconda.</p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- YUI / PROYECTO ESTRELLA -->
+    <section id="yui" class="section relative overflow-hidden">
+      <div class="mx-auto max-w-6xl px-5 lg:px-8">
+        <div class="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end reveal">
+          <div>
+            <p class="eyebrow">Proyecto estrella</p>
+            <h2 class="section-title">Yui<span class="text-accent">.</span></h2>
+          </div>
+          <p class="max-w-xl text-base leading-7 text-muted">
+            Un asistente personal local pensado para evolucionar desde automatización
+            de tareas hasta voz, memoria, interfaz y capacidades inteligentes.
+          </p>
         </div>
+
+        <div class="yui-frame reveal delay-1">
+          <div class="video-placeholder">
+            <div class="absolute left-5 top-5 flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-3 py-1.5 text-xs text-white/70 backdrop-blur">
+              <span class="status-dot"></span> Demo en preparación
+            </div>
+
+            <!--
+              VIDEO YUI:
+              OPCIÓN A — VIDEO LOCAL:
+              Reemplazá este bloque placeholder por:
+              <video controls preload="metadata" poster="img/mi-poster.jpg">
+                <source src="video/yui-demo.mp4" type="video/mp4">
+              </video>
+
+              OPCIÓN B — YOUTUBE/VIMEO:
+              Reemplazá el placeholder por un iframe 16:9:
+              <iframe src="https://www.youtube.com/embed/TU_ID"
+                      title="Demo de Yui" loading="lazy" allowfullscreen></iframe>
+            -->
+            <div class="text-center">
+              <div class="mx-auto mb-6 grid h-20 w-20 place-items-center rounded-3xl border border-accent/20 bg-accent/5 text-accent shadow-glow">
+                <i data-lucide="play" class="h-8 w-8 fill-current"></i>
+              </div>
+              <p class="font-display text-2xl font-semibold">Demo de Yui</p>
+              <p class="mx-auto mt-2 max-w-md text-sm leading-6 text-muted">
+                Actualemte estoy trabajando en Yui, cuando finalice subire el video final del proyecto.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5 grid gap-4 sm:grid-cols-3 reveal delay-2">
+          <div class="mini-card"><span>01</span><p>Asistente local</p></div>
+          <div class="mini-card"><span>02</span><p>Automatización</p></div>
+          <div class="mini-card"><span>03</span><p>IA + Python</p></div>
+        </div>
+      </div>
     </section>
 
-    <section class="skills" id="skills">
-        <div class="contenido-section">
-            <h2> Skills y Tecnica Personal</h2>
-            <div class="fila">
-                <div class="col">
-                    <h3> Skills</h3>
-                    <div class="skill">
-                        <span>Html & Css</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>75%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Javascript</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>35%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Python</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>60%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                       <span>C</span>
-                       <div class="barra-skill">
-                            <div class="progreso">
-                                <span>40%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>C++</span>
-                        <div class="barra-skill">
-                        <div class="elemento-a-animar"></div>
-                            <div class="progreso">
-                                <span>50%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Base de Datos</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>70%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>SQL</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>35%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>SQL Server</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>35%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Redes</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>60%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>Conocientos Basicos de Ciberseguridad</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>60%</span>
-                            </div>
-                      </div>
-                    </div>
-                    <div class="skill">
-                        <span>Ruby</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>50%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                    <span>BootStrap</span>
-                        <div class="barra-skill">
-                        <div class="progreso">
-                            <span>55%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <h3>Tecnica Personal</h3>
-                <div class="skill">
-                    <span>Comunicacion</span>
-                    <div class="barra-skill">
-                        <div class="progreso">
-                            <span>80%</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <span>Trabajo en Equipo</span>
-                    <div class="barra-skill">
-                        <div class="progreso">
-                            <span>75%</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <span>Creatividad</span>
-                    <div class="barra-skill">
-                        <div class="progreso">
-                            <span>80%</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill">
-                   <span>Dedicacion</span>
-                   <div class="barra-skill">
-                        <div class="progreso">
-                            <span>80%</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <span>Autodidacta</span>
-                    <div class="barra-skill">
-                        <div class="progreso">
-                            <span>90%</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <span>Resolucion de Problemas</span>
-                    <div class="barra-skill">
-                        <div class="progreso">
-                            <span>70%</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <span>Adaptabilidad</span>
-                    <div class="barra-skill">
-                        <div class="progreso">
-                            <span>75%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="section section-alt">
+      <div class="mx-auto max-w-6xl px-5 lg:px-8">
+        <div class="mb-10 reveal">
+          <p class="eyebrow">Portfolio</p>
+          <h2 class="section-title">Proyectos seleccionados<span class="text-accent">.</span></h2>
         </div>
-        </div>
-    </section>
-    
-    <section id="sobremi" class="sobremi">
-        <div class="contenido-section">
-            <h2>Sobre Mi</h2>
-            <p><span>Hola, soy Franco Alegre</span>: Estudiante de tecnicatura superior en informatica con  gran interes en ciberseguridad / programacion tanto en backend y front-end. Tengo gran capacidad para adaptarme a todo tipo de entornos y aportar siempre lo mejor  de mi. Me caracterizo por mi facilidad para el trabajo en equipo y mi entusiasmo por aprender y desarrollar mis habilidades. En busca de una oportunidad laboral en la cual poder adquirir mas experiencia.</p>
-            <div class="fila">
-                <div class="col">
-                    <h3>Datos Personales</h3>
-                    <ul>
-                        <li>
-                            <strong>Cumpleaños:</strong>
-                            12-05-2002
-                        </li>
-                        <li>
-                            <strong>Telefono:</strong>
-                            11-32927994
-                        </li>
-                        <li>
-                            <strong>Email:</strong>
-                            francocacu58@gmail.com
-                        </li>
-                        <li>
-                            <strong>Proyectos:</strong>
-                            https://github.com/frankbj12
-                        </li>
-                        <li>
-                            <strong>Direccion:</strong>
-                            Marcos Sastre 3580
-                        </li>  
-                        <li>
-                            <strong>Cargo:</strong>
-                            <span>PROGRAMADOR </span>
-                       </li> 
-                    </ul>
-                </div>   
-            <div class="col">
-                <h3>intereses</h3>
-                <div class="contenedor-intereses">
-                    <div class="interes">
-                        <i class="fa-solid fa-gamepad"></i>
-                        <span>Juegos</span>
-                    </div>
-                    <div class="interes">
-                        <i class="fa-solid fa-headphones"></i>
-                        <span>Musica</span>
-                    </div>
 
-                </div>
+        <div class="project-slider reveal delay-1">
+          <div id="project-track" class="slider-track">
+            <article class="project-card">
+              <!-- RECURSO EXISTENTE: podés cambiar el path por otra captura del proyecto. -->
+              <img src="img/proeject.png" alt="Captura de proyecto final de desarrollo web" loading="lazy" width="1357" height="663">
+              <div class="project-content">
+                <span class="project-number">01 / WEB</span>
+                <h3>Proyecto final</h3>
+                <p>Desarrollo web con foco en estructura, estilos y experiencia de usuario.</p>
+                <span class="project-tech">HTML · CSS · JavaScript</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <!-- RECURSO EXISTENTE: captura de la página personal original. -->
+              <img src="img/iam.png" alt="Captura de página personal" loading="lazy" width="1361" height="773">
+              <div class="project-content">
+                <span class="project-number">02 / PORTFOLIO</span>
+                <h3>Portfolio personal</h3>
+                <p>La versión anterior de este sitio, ahora reestructurada con un enfoque moderno.</p>
+                <span class="project-tech">HTML · CSS · UI/UX</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <!-- RECURSO EXISTENTE: proyecto de restaurante. -->
+              <img src="img/RESTAURANT.png" alt="Captura de proyecto de restaurante" loading="lazy" width="1363" height="705">
+              <div class="project-content">
+                <span class="project-number">03 / FRONTEND</span>
+                <h3>Restaurant</h3>
+                <p>Interfaz web orientada a presentación de contenido y navegación.</p>
+                <span class="project-tech">HTML · CSS · JavaScript</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="mt-6 flex items-center justify-between">
+            <div id="project-dots" class="flex gap-2" aria-label="Navegación de proyectos"></div>
+            <div class="flex gap-2">
+              <button id="project-prev" class="slider-btn" aria-label="Proyecto anterior"><i data-lucide="arrow-left"></i></button>
+              <button id="project-next" class="slider-btn" aria-label="Proyecto siguiente"><i data-lucide="arrow-right"></i></button>
             </div>
-            <button>
-                Descargar cv  <a href="img/cv 2025.pdf"download="cv-pdf" ><i class="fa-sharp fa-solid fa-download"></i></a>                            
-                <span class="overlay"></span>
-            </button>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section id="contacto" class="contacto">
-        <div class="contenido-section">
-            <h2>CONTACTO</h2>
-            <div class="fila">
-                <!-- -->
-                <div class="col">
-                    <input type="text" placeholder="Tu Nombre: (no funciona...todavia)">
-                    <input type="text" placeholder="Numero de Telefono: (no funciona...todavia)">
-                    <input type="text" placeholder="Correo Electronico: (no funciona...todavia)">
-                    <input type="text" placeholder="Tema: (no funciona...todavia)">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje: (no funciona...todavia)"></textarea>
-                    <button>
-                        Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
-                        <span class="overlay"></span>
-                    </button>
-                </div>
-                <!---->
-                <div class="col">
-                    <img src="img/DemoCreatorRec_2023-08-28 13-22-13_000.jpg" alt="">
-                    <div class="info">
-                        <ul>
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-                                Marcos Sastre 3580, Buenos Aires
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-mobile-screen-button"></i>
-                                Mi Numero Personal: +54 1132927994
-                            </li>
-                            <li>
-                                <i class="fa-solid fa-envelope"></i>
-                                Email:  francocacu58@gmail.com
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+    <!-- SOBRE MI + HABILIDADES -->
+    <section id="sobre-mi" class="section">
+      <div class="mx-auto max-w-6xl px-5 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-[.9fr_1.1fr]">
+          <div class="reveal">
+            <p class="eyebrow">Sobre mí</p>
+            <h2 class="section-title">Código con<br><span class="text-gradient">propósito.</span></h2>
+            <p class="mt-7 text-base leading-8 text-muted">
+              Soy Franco Alegre, estudiante de informática con interés en desarrollo
+              backend/frontend, ciberseguridad y tecnología aplicada. Me gusta aprender
+              haciendo, resolver problemas y transformar ideas en proyectos funcionales.
+            </p>
+
+            <div class="mt-8 grid grid-cols-2 gap-3">
+              <div class="stat-card"><strong>Web</strong><span>Backend & Frontend</span></div>
+              <div class="stat-card"><strong>IT</strong><span>Soporte técnico</span></div>
+              <div class="stat-card"><strong>Python</strong><span>Desarrollo & Automatización</span></div>
+              <div class="stat-card"><strong>IA</strong><span>Exploración local</span></div>
             </div>
+
+            <a href="img/Franco-Alegre-CV-FINAL.pdf.pdf" download="CV-Franco-Alegre.pdf" class="btn-secondary mt-8 inline-flex">
+              Descargar CV <i data-lucide="download"></i>
+            </a>
+          </div>
+
+          <div id="habilidades" class="reveal delay-1">
+            <p class="eyebrow">Stack</p>
+            <h3 class="mb-6 font-display text-2xl font-semibold">Tecnologías y herramientas</h3>
+            <div class="skills-grid">
+              <div class="skill-pill"><i data-lucide="code-2"></i> HTML & CSS</div>
+              <div class="skill-pill"><i data-lucide="braces"></i> JavaScript</div>
+              <div class="skill-pill"><i data-lucide="terminal"></i> Python</div>
+              <div class="skill-pill"><i data-lucide="database"></i> SQL / BD</div>
+              <div class="skill-pill"><i data-lucide="cpu"></i> C / C++</div>
+              <div class="skill-pill"><i data-lucide="gem"></i> Ruby</div>
+              <div class="skill-pill"><i data-lucide="layout-template"></i> Herramientas de ticketing</div>
+              <div class="skill-pill"><i data-lucide="network"></i> Redes</div>
+              <div class="skill-pill"><i data-lucide="shield-check"></i> Ciberseguridad</div>
+              <div class="skill-pill"><i data-lucide="users"></i> Trabajo en equipo</div>
+              <div class="skill-pill"><i data-lucide="lightbulb"></i> Creatividad</div>
+              <div class="skill-pill"><i data-lucide="refresh-cw"></i> Adaptabilidad</div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <footer>
-        <a href="#inicio" class="arriba">
-            <i class="fa-solid fa-angles-up"></i>
-        </a>
-        <div class="redes">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.linkedin.com/in/franco-alegre-160b20233/"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com/frankbj12"><i class="fa-brands fa-github"></i></a>
-        </div> 
-    </footer>
+    <!-- CERTIFICADOS -->
+    <section id="certificados" class="section section-alt">
+      <div class="mx-auto max-w-6xl px-5 lg:px-8">
+        <div class="mb-8 flex flex-col justify-between gap-5 sm:flex-row sm:items-end reveal">
+          <div>
+            <p class="eyebrow">Formación</p>
+            <h2 class="section-title">Certificaciones<span class="text-accent">.</span></h2>
+          </div>
+          <p class="text-sm text-muted">Deslizá para explorar la colección.</p>
+        </div>
 
-    <script src="script.js"></script>
+        <div id="cert-slider" class="cert-slider reveal delay-1">
+          <div id="cert-track" class="cert-track">
+            <!-- TODOS ESTOS RECURSOS YA EXISTÍAN EN TU PÁGINA ORIGINAL. -->
+            <figure class="cert-card"><img src="img/ingles A1.png" alt="Certificado Inglés A1" loading="lazy" width="1129" height="759"><figcaption>Inglés A1</figcaption></figure>
+            <figure class="cert-card"><img src="img/python datos.png" alt="Certificado Procesamiento de datos con Python" loading="lazy" width="1055" height="689"><figcaption>Python · Datos</figcaption></figure>
+            <figure class="cert-card"><img src="img/Cisco ciberseguridad.png" alt="Certificado Cisco Ciberseguridad" loading="lazy" width="1137" height="765"><figcaption>Ciberseguridad</figcaption></figure>
+            <figure class="cert-card"><img src="img/INLES IT a2.png" alt="Certificado Inglés IT A2" loading="lazy" width="799" height="609"><figcaption>Inglés IT A2</figcaption></figure>
+            <figure class="cert-card"><img src="img/Desarrollo web front end.png" alt="Certificado Desarrollo web front end" loading="lazy" width="1081" height="757"><figcaption>Desarrollo Frontend</figcaption></figure>
+            <figure class="cert-card"><img src="img/JavaScript 2.png" alt="Certificado JavaScript" loading="lazy" width="1125" height="765"><figcaption>JavaScript</figcaption></figure>
+            <figure class="cert-card"><img src="img/ingles A2.png" alt="Certificado Inglés A2" loading="lazy" width="1129" height="767"><figcaption>Inglés A2</figcaption></figure>
+            <figure class="cert-card"><img src="img/Programacion y ciber.png" alt="Certificado Programación y ciberseguridad" loading="lazy" width="1061" height="757"><figcaption>Programación + Cyber</figcaption></figure>
+            <figure class="cert-card"><img src="img/ingles a1.1.png" alt="Certificado Inglés A1" loading="lazy" width="1127" height="759"><figcaption>Inglés A1</figcaption></figure>
+            <figure class="cert-card"><img src="img/JavaScript 1.png" alt="Certificado JavaScript Essentials" loading="lazy" width="1366" height="768"><figcaption>JavaScript Essentials</figcaption></figure>
+            <figure class="cert-card"><img src="img/SE PROGRMAR 1ra.png" alt="Certificado SeProgramar" loading="lazy" width="801" height="567"><figcaption>#SeProgramar</figcaption></figure>
+            <figure class="cert-card"><img src="img/trainig laboral.png" alt="Certificado Training Laboral" loading="lazy" width="803" height="557"><figcaption>Training Laboral</figcaption></figure>
+            <figure class="cert-card"><img src="img/titulo esstnc.jpg" alt="Título técnico en informática" loading="lazy" width="4160" height="3120"><figcaption>Técnico en Informática</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA / CURRICULUM -->
+    <section id="experiencia" class="section">
+      <div class="mx-auto max-w-6xl px-5 lg:px-8">
+        <div class="mb-10 reveal">
+          <p class="eyebrow">Trayectoria</p>
+          <h2 class="section-title">Formación & experiencia<span class="text-accent">.</span></h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="timeline-year">2021 — Presente</span>
+            <div>
+              <h3>Técnico Superior en Informática</h3>
+              <p class="timeline-place">Universidad Nacional de General Sarmiento · Buenos Aires</p>
+              <p>Formación en informática, programación, bases de datos y tecnologías relacionadas.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-year">2022 — 2023</span>
+            <div>
+              <h3>Desarrollo web & programación</h3>
+              <p class="timeline-place">Google · Argentina Programa · Cisco</p>
+              <p>Primeros pasos en HTML, CSS y JavaScript, programación orientada a objetos, Ruby y fundamentos de ciberseguridad.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-year">2023 — 2024</span>
+            <div>
+              <h3>Python, datos & capacitación laboral</h3>
+              <p class="timeline-place">Argentina Programa 4.0 · Training Laboral</p>
+              <p>Procesamiento de datos con Python, fundamentos de Machine Learning y atención al cliente.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-year">Actual</span>
+            <div>
+              <h3>Construcción de Yui</h3>
+              <p class="timeline-place">Proyecto personal</p>
+              <p>Desarrollo de un asistente local con Python y Ollama, enfocado en automatización y futuras capacidades de IA.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section section-alt">
+      <div class="mx-auto max-w-6xl px-5 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
+          <div class="reveal">
+            <p class="eyebrow">Contacto</p>
+            <h2 class="section-title">Hablemos<span class="text-accent">.</span></h2>
+            <p class="mt-6 max-w-md text-base leading-8 text-muted">
+              ¿Tenés una oportunidad laboral, un proyecto o una idea para desarrollar?
+              Podés escribirme directamente.
+            </p>
+
+            <div class="mt-8 space-y-4">
+              <a class="contact-link" href="mailto:devfrank007@gmail.com"><i data-lucide="mail"></i><span>devfrank007@gmail.com</span></a>
+              <a class="contact-link" href="https://github.com/frankbj12" target="_blank" rel="noreferrer"><i data-lucide="github"></i><span>github.com/frankbj12</span></a>
+              <a class="contact-link" href="https://www.linkedin.com/in/franco-alegre-160b20233/" target="_blank" rel="noreferrer"><i data-lucide="linkedin"></i><span>LinkedIn</span></a>
+            </div>
+          </div>
+
+          <form id="contact-form" class="contact-form reveal delay-1">
+            <div class="grid gap-5 sm:grid-cols-2">
+              <label>Nombre<input name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" required></label>
+              <label>Email<input name="email" type="email" autocomplete="email" placeholder="tu@email.com" required></label>
+            </div>
+            <label>Asunto<input name="asunto" type="text" placeholder="¿En qué puedo ayudarte?" required></label>
+            <label>Mensaje<textarea name="mensaje" rows="6" placeholder="Escribí tu mensaje..." required></textarea></label>
+            <button class="btn-primary w-full sm:w-fit" type="submit">Preparar email <i data-lucide="send"></i></button>
+            <p id="form-status" class="hidden text-sm text-accent" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-ink">
+    <div class="mx-auto flex max-w-6xl flex-col gap-5 px-5 py-8 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+      <p class="text-sm text-muted">© <span id="year"></span> Franco Alegre. Hecho con HTML, CSS y JavaScript.</p>
+      <div class="flex gap-4">
+        <a class="social-link" href="https://github.com/frankbj12" target="_blank" rel="noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a>
+        <a class="social-link" href="https://www.linkedin.com/in/franco-alegre-160b20233/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+        <a class="social-link" href="#inicio" aria-label="Volver arriba"><i data-lucide="arrow-up"></i></a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
