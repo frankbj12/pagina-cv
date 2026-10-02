@@ -3,37 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio personal de Franco Alegre — desarrollo web, programación y soporte IT.">
+  <meta name="description" content="Portfolio de Franco Alegre: proyectos de desarrollo web, programación y soporte IT.">
   <meta name="theme-color" content="#080b12">
-  <title>Franco Alegre | Developer & IT</title>
-
-  <!-- Tailwind CSS vía CDN. Para producción, puede migrarse a Tailwind CLI/PostCSS. -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-            display: ['Space Grotesk', 'Inter', 'ui-sans-serif', 'sans-serif']
-          },
-          colors: {
-            ink: '#080b12',
-            panel: '#101620',
-            accent: '#8bffbf',
-            muted: '#98a2b3'
-          },
-          boxShadow: {
-            glow: '0 0 60px rgba(139,255,191,.12)'
-          }
-        }
-      }
-    }
-  </script>
+  <title>Franco Alegre | Desarrollo web y soporte IT</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tailwind.css">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="img/codess.png">
   <script src="https://unpkg.com/lucide@latest" defer></script>
@@ -50,17 +27,16 @@
         FA<span class="text-accent">.</span>
       </a>
 
-      <button id="menu-toggle" class="rounded-xl border border-white/10 p-2.5 text-white/80 md:hidden" aria-label="Abrir menú" aria-expanded="false">
+      <button id="menu-toggle" class="rounded-xl border border-white/10 p-2.5 text-white/80 md:hidden" aria-label="Abrir menú" aria-controls="main-nav" aria-expanded="false">
         <i data-lucide="menu"></i>
       </button>
 
       <nav id="main-nav" class="absolute left-4 right-4 top-[calc(100%+8px)] hidden rounded-2xl border border-white/10 bg-panel/95 p-3 shadow-2xl backdrop-blur-xl md:static md:block md:bg-transparent md:p-0 md:shadow-none">
         <ul class="flex flex-col gap-1 md:flex-row md:items-center md:gap-2">
           <li><a class="nav-link" href="#inicio">Inicio</a></li>
-          <li><a class="nav-link" href="#yui">Yui</a></li>
           <li><a class="nav-link" href="#proyectos">Proyectos</a></li>
           <li><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
-          <li><a class="nav-link" href="#experiencia">Experiencia</a></li>
+          <li><a class="nav-link" href="#experiencia">Trayectoria</a></li>
           <li><a class="nav-link" href="#contacto">Contacto</a></li>
         </ul>
       </nav>
@@ -87,27 +63,29 @@
           </h1>
 
           <p class="mt-7 max-w-2xl text-lg leading-8 text-muted sm:text-xl">
-            Developer & IT. Construyo soluciones web, exploro automatización con IA
-            y combino programación con soporte técnico para resolver problemas reales.
+            Desarrollo web y soporte IT. Construyo soluciones con código y combino
+            programación con soporte técnico para resolver problemas reales.
           </p>
 
           <div class="mt-9 flex flex-wrap gap-3">
-            <a href="#yui" class="btn-primary">
-              Conocer Yui <i data-lucide="arrow-down-right"></i>
+            <a href="#proyectos" class="btn-primary">
+              Ver proyectos <i data-lucide="arrow-down-right"></i>
             </a>
-            <a href="#proyectos" class="btn-secondary">
-              Ver proyectos <i data-lucide="layers-3"></i>
+            <a href="#contacto" class="btn-secondary">
+              Contactarme <i data-lucide="mail"></i>
             </a>
           </div>
 
           <div class="mt-10 flex flex-wrap gap-5 text-sm text-muted">
             <a class="social-link" href="https://github.com/frankbj12" target="_blank" rel="noreferrer">
-              <i data-lucide="github"></i> GitHub
+              <svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.08c-3.1.67-3.75-1.31-3.75-1.31-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1.75 2.4 4.18 1.7.1-.73.39-1.23.7-1.51-2.47-.28-5.07-1.24-5.07-5.5 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.62 10.62 0 0 1 5.55 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.27-2.6 5.21-5.08 5.49.4.35.75 1.02.75 2.06v3.05c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>
+              GitHub
             </a>
             <a class="social-link" href="https://www.linkedin.com/in/franco-alegre-160b20233/" target="_blank" rel="noreferrer">
-              <i data-lucide="linkedin"></i> LinkedIn
+              <svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.7H4.96V9.14h2.97v9.56ZM6.44 7.84a1.72 1.72 0 1 1 .02-3.44 1.72 1.72 0 0 1-.02 3.44Zm12.25 10.86h-2.97v-4.65c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.41V9.14h2.85v1.31h.04c.4-.75 1.37-1.55 2.82-1.55 3.01 0 3.57 1.98 3.57 4.56v5.24Z"/></svg>
+              LinkedIn
             </a>
-            <a class="social-link" href="mailto:francocacu58@gmail.com">
+            <a class="social-link" href="mailto:devfrank007@gmail.com">
               <i data-lucide="mail"></i> Email
             </a>
           </div>
@@ -126,55 +104,116 @@
       </div>
     </section>
 
-    <!-- YUI / PROYECTO ESTRELLA -->
+    <!-- YUI / PROYECTO DESTACADO -->
     <section id="yui" class="section relative overflow-hidden">
       <div class="mx-auto max-w-6xl px-5 lg:px-8">
         <div class="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end reveal">
           <div>
-            <p class="eyebrow">Proyecto estrella</p>
+            <p class="eyebrow">Proyecto destacado</p>
             <h2 class="section-title">Yui<span class="text-accent">.</span></h2>
           </div>
           <p class="max-w-xl text-base leading-7 text-muted">
-            Un asistente personal local pensado para evolucionar desde automatización
-            de tareas hasta voz, memoria, interfaz y capacidades inteligentes.
+            Asistente personal por voz para Windows, desarrollado en Python y diseñado para funcionar
+            en local. El proyecto prioriza la privacidad y crece de forma incremental hacia una
+            experiencia de asistencia cada vez más completa.
           </p>
         </div>
 
-        <div class="yui-frame reveal delay-1">
-          <div class="video-placeholder">
-            <div class="absolute left-5 top-5 flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-3 py-1.5 text-xs text-white/70 backdrop-blur">
-              <span class="status-dot"></span> Demo en preparación
+        <div class="yui-overview reveal delay-1">
+          <div class="yui-status">
+            <span class="status-dot"></span>
+            <span>En desarrollo activo</span>
+            <span class="yui-status-separator">·</span>
+            <span>Proyecto personal</span>
+          </div>
+
+          <div class="yui-content-grid">
+            <div>
+              <p class="yui-label">Qué estoy construyendo</p>
+              <p class="yui-description">
+                Un asistente que combina conversación natural, voz y herramientas de Windows para
+                ayudar con tareas cotidianas y de desarrollo. El modelo Qwen 2.5 3B se ejecuta
+                localmente con Ollama, sin APIs externas de IA.
+              </p>
+              <div class="yui-tech-list" aria-label="Tecnologías principales de Yui">
+                <span>Python 3.11</span>
+                <span>Ollama · Qwen 2.5 3B</span>
+                <span>Vosk</span>
+                <span>Edge-TTS · pyttsx3</span>
+                <span>SQLite</span>
+                <span>Windows</span>
+              </div>
             </div>
 
-            <!--
-              VIDEO YUI:
-              OPCIÓN A — VIDEO LOCAL:
-              Reemplazá este bloque placeholder por:
-              <video controls preload="metadata" poster="img/mi-poster.jpg">
-                <source src="video/yui-demo.mp4" type="video/mp4">
-              </video>
-
-              OPCIÓN B — YOUTUBE/VIMEO:
-              Reemplazá el placeholder por un iframe 16:9:
-              <iframe src="https://www.youtube.com/embed/TU_ID"
-                      title="Demo de Yui" loading="lazy" allowfullscreen></iframe>
-            -->
-            <div class="text-center">
-              <div class="mx-auto mb-6 grid h-20 w-20 place-items-center rounded-3xl border border-accent/20 bg-accent/5 text-accent shadow-glow">
-                <i data-lucide="play" class="h-8 w-8 fill-current"></i>
-              </div>
-              <p class="font-display text-2xl font-semibold">Demo de Yui</p>
-              <p class="mx-auto mt-2 max-w-md text-sm leading-6 text-muted">
-                Actualemte estoy trabajando en Yui, cuando finalice subire el video final del proyecto.
-              </p>
+            <div class="yui-privacy-card">
+              <i data-lucide="shield-check" aria-hidden="true"></i>
+              <p class="yui-label">Privacidad por diseño</p>
+              <p>La IA, el reconocimiento de voz y la memoria funcionan localmente. La síntesis principal usa Edge-TTS; pyttsx3 ofrece una alternativa local.</p>
             </div>
           </div>
-        </div>
 
-        <div class="mt-5 grid gap-4 sm:grid-cols-3 reveal delay-2">
-          <div class="mini-card"><span>01</span><p>Asistente local</p></div>
-          <div class="mini-card"><span>02</span><p>Automatización</p></div>
-          <div class="mini-card"><span>03</span><p>IA + Python</p></div>
+          <div class="yui-capabilities">
+            <p class="yui-label">Capacidades de la base actual</p>
+            <div class="yui-feature-grid">
+              <article class="yui-feature">
+                <i data-lucide="messages-square" aria-hidden="true"></i>
+                <h3>Conversación con contexto</h3>
+                <p>Historial reciente, resúmenes progresivos y memoria de preferencias elegidas por el usuario.</p>
+              </article>
+              <article class="yui-feature">
+                <i data-lucide="mic-2" aria-hidden="true"></i>
+                <h3>Interacción por voz</h3>
+                <p>Reconocimiento local en español con Vosk y respuesta hablada con Edge-TTS o pyttsx3.</p>
+              </article>
+              <article class="yui-feature">
+                <i data-lucide="brain" aria-hidden="true"></i>
+                <h3>Memoria y contexto</h3>
+                <p>Preferencias persistentes, resúmenes de conversaciones y contexto del entorno con SQLite.</p>
+              </article>
+              <article class="yui-feature">
+                <i data-lucide="list-checks" aria-hidden="true"></i>
+                <h3>Recordatorios y rutinas</h3>
+                <p>Recordatorios en lenguaje natural, avisos por prioridad y rutinas para tareas frecuentes.</p>
+              </article>
+              <article class="yui-feature">
+                <i data-lucide="monitor-cog" aria-hidden="true"></i>
+                <h3>Herramientas para Windows</h3>
+                <p>Encuentra proyectos y aplicaciones, consulta el sistema y trabaja con archivos y multimedia.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="yui-safety">
+            <i data-lucide="shield-check" aria-hidden="true"></i>
+            <p><strong>Acciones seguras:</strong> las operaciones destructivas requieren confirmación explícita; el modelo no controla directamente el sistema.</p>
+          </div>
+
+          <div class="yui-roadmap">
+            <div>
+              <p class="yui-label">Estado del proyecto</p>
+              <h3>Base funcional; evolución en marcha</h3>
+              <p>Ya cuenta con sesión conversacional, enrutamiento por Skills, memoria y recordatorios en SQLite, rutinas, contexto del sistema y confirmaciones para acciones sensibles. La suite documentada en el README ronda los 328 tests.</p>
+            </div>
+            <div class="yui-progress" aria-label="Avance del proyecto en progreso">
+              <span class="yui-progress-indicator"></span>
+              <span>En desarrollo activo</span>
+            </div>
+          </div>
+
+          <div class="yui-next-steps">
+            <p class="yui-label">Roadmap · próximas etapas</p>
+            <ul>
+              <li>Inicio automático y presencia continua en Windows.</li>
+              <li>Referencias contextuales más ricas y automatización segura de tareas encadenadas.</li>
+              <li>Una interfaz gráfica para complementar la experiencia por voz.</li>
+              <li>Exploración futura de percepción visual y reconocimiento del usuario.</li>
+            </ul>
+          </div>
+
+          <div class="yui-footer">
+            <span><i data-lucide="refresh-cw" aria-hidden="true"></i> Avances y demos se irán actualizando</span>
+            <span><i data-lucide="circle-dashed" aria-hidden="true"></i> Demo pública pendiente</span>
+          </div>
         </div>
       </div>
     </section>
@@ -190,13 +229,62 @@
         <div class="project-slider reveal delay-1">
           <div id="project-track" class="slider-track">
             <article class="project-card">
+              <div class="project-art project-art-furniture" role="img" aria-label="Vista gráfica del proyecto de tienda de muebles">
+                <span class="project-art-kicker">E-COMMERCE · FULL STACK</span>
+                <strong>Hermanos<br>Jota</strong>
+                <span class="project-art-shape" aria-hidden="true"></span>
+              </div>
+              <div class="project-content">
+                <span class="project-number">01 / FULL STACK</span>
+                <h3>Mueblería Hermanos Jota</h3>
+                <p>Tienda de muebles artesanales creada en equipo, con catálogo, carrito y API REST.</p>
+                <span class="project-tech">React · Node.js · Express</span>
+                <a class="project-source" href="https://muebleria-hermanos-jota-grupo-13.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Ver demo de Mueblería Hermanos Jota">Ver demo <i data-lucide="arrow-up-right"></i></a>
+                <a class="project-source" href="https://github.com/frankbj12/Muebleria-Hermanos-Jota" target="_blank" rel="noopener noreferrer" aria-label="Ver código fuente de Mueblería Hermanos Jota">Ver código fuente <i data-lucide="arrow-up-right"></i></a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-art project-art-tasks" role="img" aria-label="Vista gráfica del gestor de tareas">
+                <span class="project-art-kicker">ORGANIZACIÓN PERSONAL</span>
+                <strong>Gestor de<br>tareas</strong>
+                <span class="project-art-shape" aria-hidden="true"></span>
+              </div>
+              <div class="project-content">
+                <span class="project-number">02 / JAVASCRIPT</span>
+                <h3>Gestor de tareas</h3>
+                <p>Aplicación web para organizar tareas por categoría y fecha, con búsqueda y vista de completadas.</p>
+                <span class="project-tech">HTML · CSS · JavaScript</span>
+                <a class="project-source" href="https://frankbj12.github.io/Gestor-de-Tareas/" target="_blank" rel="noopener noreferrer" aria-label="Ver demo del gestor de tareas">Ver demo <i data-lucide="arrow-up-right"></i></a>
+                <a class="project-source" href="https://github.com/frankbj12/Gestor-de-Tareas" target="_blank" rel="noopener noreferrer" aria-label="Ver código fuente del gestor de tareas">Ver código fuente <i data-lucide="arrow-up-right"></i></a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-art project-art-calculator" role="img" aria-label="Vista gráfica de una calculadora de consola">
+                <span class="project-art-kicker">PYTHON · CONSOLA</span>
+                <strong>1 + 1 = <span>2</span></strong>
+                <span class="project-art-shape" aria-hidden="true"></span>
+              </div>
+              <div class="project-content">
+                <span class="project-number">03 / PYTHON</span>
+                <h3>Calculadora</h3>
+                <p>Calculadora interactiva de consola con operaciones básicas y validación de entradas.</p>
+                <span class="project-tech">Python</span>
+                <a class="project-source" href="https://github.com/frankbj12/proyecto-calculadora" target="_blank" rel="noopener noreferrer" aria-label="Ver código fuente de la calculadora en Python">Ver código fuente <i data-lucide="arrow-up-right"></i></a>
+              </div>
+            </article>
+
+            <article class="project-card">
               <!-- RECURSO EXISTENTE: podés cambiar el path por otra captura del proyecto. -->
               <img src="img/proeject.png" alt="Captura de proyecto final de desarrollo web" loading="lazy" width="1357" height="663">
               <div class="project-content">
-                <span class="project-number">01 / WEB</span>
+                <span class="project-number">04 / WEB</span>
                 <h3>Proyecto final</h3>
-                <p>Desarrollo web con foco en estructura, estilos y experiencia de usuario.</p>
+                <p>Página web tipo CV creada como proyecto final del curso, con foco en estructura y presentación del perfil.</p>
                 <span class="project-tech">HTML · CSS · JavaScript</span>
+                <a class="project-source" href="https://frankbj12.github.io/proyecto-final/" target="_blank" rel="noopener noreferrer" aria-label="Ver demo del proyecto final">Ver demo <i data-lucide="arrow-up-right"></i></a>
+                <a class="project-source" href="https://github.com/frankbj12/proyecto-final" target="_blank" rel="noopener noreferrer" aria-label="Ver código fuente del proyecto final en GitHub">Ver código fuente <i data-lucide="arrow-up-right"></i></a>
               </div>
             </article>
 
@@ -204,10 +292,11 @@
               <!-- RECURSO EXISTENTE: captura de la página personal original. -->
               <img src="img/iam.png" alt="Captura de página personal" loading="lazy" width="1361" height="773">
               <div class="project-content">
-                <span class="project-number">02 / PORTFOLIO</span>
+                <span class="project-number">05 / PORTFOLIO</span>
                 <h3>Portfolio personal</h3>
-                <p>La versión anterior de este sitio, ahora reestructurada con un enfoque moderno.</p>
+                <p>Una versión anterior de mi portfolio personal; su repositorio conserva el código fuente original.</p>
                 <span class="project-tech">HTML · CSS · UI/UX</span>
+                <a class="project-source" href="https://github.com/frankbj12/Pagina-Personal" target="_blank" rel="noopener noreferrer" aria-label="Ver código fuente del portfolio anterior en GitHub">Ver código fuente <i data-lucide="arrow-up-right"></i></a>
               </div>
             </article>
 
@@ -215,10 +304,12 @@
               <!-- RECURSO EXISTENTE: proyecto de restaurante. -->
               <img src="img/RESTAURANT.png" alt="Captura de proyecto de restaurante" loading="lazy" width="1363" height="705">
               <div class="project-content">
-                <span class="project-number">03 / FRONTEND</span>
+                <span class="project-number">06 / FRONTEND</span>
                 <h3>Restaurant</h3>
-                <p>Interfaz web orientada a presentación de contenido y navegación.</p>
+                <p>Landing para un restaurante italiano, basada en un diseño de Figma y publicada como demo web.</p>
                 <span class="project-tech">HTML · CSS · JavaScript</span>
+                <a class="project-source" href="https://frankbj12.github.io/proyecto_final_pagina_restaurant/" target="_blank" rel="noopener noreferrer" aria-label="Ver demo del proyecto Restaurant">Ver demo <i data-lucide="arrow-up-right"></i></a>
+                <a class="project-source" href="https://github.com/frankbj12/proyecto_final_pagina_restaurant" target="_blank" rel="noopener noreferrer" aria-label="Ver código fuente del proyecto Restaurant en GitHub">Ver código fuente <i data-lucide="arrow-up-right"></i></a>
               </div>
             </article>
           </div>
@@ -254,7 +345,7 @@
               <div class="stat-card"><strong>IA</strong><span>Exploración local</span></div>
             </div>
 
-            <a href="img/Franco-Alegre-CV-FINAL.pdf.pdf" download="CV-Franco-Alegre.pdf" class="btn-secondary mt-8 inline-flex">
+            <a href="img/CV-Franco-Alegre.pdf" download="CV-Franco-Alegre.pdf" class="btn-secondary mt-8 inline-flex">
               Descargar CV <i data-lucide="download"></i>
             </a>
           </div>
@@ -289,10 +380,10 @@
             <p class="eyebrow">Formación</p>
             <h2 class="section-title">Certificaciones<span class="text-accent">.</span></h2>
           </div>
-          <p class="text-sm text-muted">Deslizá para explorar la colección.</p>
+          <p class="text-sm text-muted">Deslizá, usá las flechas o elegí un punto.</p>
         </div>
 
-        <div id="cert-slider" class="cert-slider reveal delay-1">
+        <div id="cert-slider" class="cert-slider reveal delay-1" role="region" aria-label="Carrusel de certificaciones" aria-roledescription="carrusel" tabindex="0">
           <div id="cert-track" class="cert-track">
             <!-- TODOS ESTOS RECURSOS YA EXISTÍAN EN TU PÁGINA ORIGINAL. -->
             <figure class="cert-card"><img src="img/ingles A1.png" alt="Certificado Inglés A1" loading="lazy" width="1129" height="759"><figcaption>Inglés A1</figcaption></figure>
@@ -309,6 +400,14 @@
             <figure class="cert-card"><img src="img/trainig laboral.png" alt="Certificado Training Laboral" loading="lazy" width="803" height="557"><figcaption>Training Laboral</figcaption></figure>
             <figure class="cert-card"><img src="img/titulo esstnc.jpg" alt="Título técnico en informática" loading="lazy" width="4160" height="3120"><figcaption>Técnico en Informática</figcaption></figure>
           </div>
+          <div class="cert-controls">
+            <div id="cert-dots" class="cert-dots" aria-label="Elegir certificado"></div>
+            <div class="cert-navigation">
+              <span id="cert-count" class="cert-count" aria-live="polite"></span>
+              <button id="cert-prev" class="slider-btn" type="button" aria-label="Certificado anterior"><i data-lucide="arrow-left"></i></button>
+              <button id="cert-next" class="slider-btn" type="button" aria-label="Certificado siguiente"><i data-lucide="arrow-right"></i></button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -318,7 +417,7 @@
       <div class="mx-auto max-w-6xl px-5 lg:px-8">
         <div class="mb-10 reveal">
           <p class="eyebrow">Trayectoria</p>
-          <h2 class="section-title">Formación & experiencia<span class="text-accent">.</span></h2>
+          <h2 class="section-title">Formación y proyectos<span class="text-accent">.</span></h2>
         </div>
 
         <div class="timeline">
@@ -349,14 +448,6 @@
             </div>
           </article>
 
-          <article class="timeline-item reveal">
-            <span class="timeline-year">Actual</span>
-            <div>
-              <h3>Construcción de Yui</h3>
-              <p class="timeline-place">Proyecto personal</p>
-              <p>Desarrollo de un asistente local con Python y Ollama, enfocado en automatización y futuras capacidades de IA.</p>
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -375,8 +466,8 @@
 
             <div class="mt-8 space-y-4">
               <a class="contact-link" href="mailto:devfrank007@gmail.com"><i data-lucide="mail"></i><span>devfrank007@gmail.com</span></a>
-              <a class="contact-link" href="https://github.com/frankbj12" target="_blank" rel="noreferrer"><i data-lucide="github"></i><span>github.com/frankbj12</span></a>
-              <a class="contact-link" href="https://www.linkedin.com/in/franco-alegre-160b20233/" target="_blank" rel="noreferrer"><i data-lucide="linkedin"></i><span>LinkedIn</span></a>
+              <a class="contact-link" href="https://github.com/frankbj12" target="_blank" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.08c-3.1.67-3.75-1.31-3.75-1.31-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1.75 2.4 4.18 1.7.1-.73.39-1.23.7-1.51-2.47-.28-5.07-1.24-5.07-5.5 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.62 10.62 0 0 1 5.55 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.27-2.6 5.21-5.08 5.49.4.35.75 1.02.75 2.06v3.05c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg><span>GitHub · frankbj12</span></a>
+              <a class="contact-link" href="https://www.linkedin.com/in/franco-alegre-160b20233/" target="_blank" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.7H4.96V9.14h2.97v9.56ZM6.44 7.84a1.72 1.72 0 1 1 .02-3.44 1.72 1.72 0 0 1-.02 3.44Zm12.25 10.86h-2.97v-4.65c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.41V9.14h2.85v1.31h.04c.4-.75 1.37-1.55 2.82-1.55 3.01 0 3.57 1.98 3.57 4.56v5.24Z"/></svg><span>LinkedIn</span></a>
             </div>
           </div>
 
@@ -399,8 +490,8 @@
     <div class="mx-auto flex max-w-6xl flex-col gap-5 px-5 py-8 sm:flex-row sm:items-center sm:justify-between lg:px-8">
       <p class="text-sm text-muted">© <span id="year"></span> Franco Alegre. Hecho con HTML, CSS y JavaScript.</p>
       <div class="flex gap-4">
-        <a class="social-link" href="https://github.com/frankbj12" target="_blank" rel="noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a>
-        <a class="social-link" href="https://www.linkedin.com/in/franco-alegre-160b20233/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+        <a class="social-link" href="https://github.com/frankbj12" target="_blank" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.08c-3.1.67-3.75-1.31-3.75-1.31-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1.75 2.4 4.18 1.7.1-.73.39-1.23.7-1.51-2.47-.28-5.07-1.24-5.07-5.5 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.62 10.62 0 0 1 5.55 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.27-2.6 5.21-5.08 5.49.4.35.75 1.02.75 2.06v3.05c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>GitHub</a>
+        <a class="social-link" href="https://www.linkedin.com/in/franco-alegre-160b20233/" target="_blank" rel="noopener noreferrer"><svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.7H4.96V9.14h2.97v9.56ZM6.44 7.84a1.72 1.72 0 1 1 .02-3.44 1.72 1.72 0 0 1-.02 3.44Zm12.25 10.86h-2.97v-4.65c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.41V9.14h2.85v1.31h.04c.4-.75 1.37-1.55 2.82-1.55 3.01 0 3.57 1.98 3.57 4.56v5.24Z"/></svg>LinkedIn</a>
         <a class="social-link" href="#inicio" aria-label="Volver arriba"><i data-lucide="arrow-up"></i></a>
       </div>
     </div>
